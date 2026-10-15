@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /opt/ml-docker-app
+    overwrite: true
+
+hooks:
+  ApplicationStart:
+    - location: scripts/start_container.sh
+      timeout: 300
+      runas: root
