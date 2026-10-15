@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Starting ML Docker build"
+
+  build:
+    commands:
+      - docker build -t ml-docker-app .
+
+  post_build:
+    commands:
+      - echo "Docker image built successfully"
+
+artifacts:
+  files:
+    - app.py
+    - requirements.txt
+    - Dockerfile
